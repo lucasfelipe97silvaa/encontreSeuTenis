@@ -1,0 +1,16 @@
+{
+  "name": "shoes",
+  "version": "1.0.0",
+  "description": "dados de tenis",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "json-server --watch db.json"
+  },
+  "author": "lucas",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "json-server": "^0.17.3"
+  }
+}
