@@ -9,7 +9,7 @@ const Root = () => {
         <Router>
             <Routes>
                 <Route path="/" element={<ListaShoes/>}/> 
-                <Route path="administra/cadastrar" element={<Cadastrar/>}/> 
+                <Route path="/cadastrar" element={<Cadastrar/>}/> 
                 <Route path="*" element={<NotFound/>}/> 
             </Routes>
         </Router>

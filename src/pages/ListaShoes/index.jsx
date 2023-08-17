@@ -9,7 +9,7 @@ const ListContainer = styled.div`
   justify-content: center;
   background-color: #ccc;
   padding: 10px;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 `
 const Container = styled.div`
   max-width: 960px;
@@ -18,7 +18,17 @@ const Container = styled.div`
 
 const Input = styled.input`
   right: 100px;
+  display: flex;
+  height: 42px;
+  border: 1px solid #ccc;
+  border-radius: 8px ;
+  width: 100%;
+  margin-bottom:20px;
+  padding: 0 10px;
+  font-size:16px;
 `
+
+
 
 
 function ListaShoes(){

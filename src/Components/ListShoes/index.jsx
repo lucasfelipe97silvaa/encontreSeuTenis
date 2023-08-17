@@ -10,7 +10,6 @@ const CapaProduto = styled.img`
 `
 
 const ItemConteiner = styled.div`
-  
   border-radius: 4px;
   background-color: #fff;
   height: 120px;
