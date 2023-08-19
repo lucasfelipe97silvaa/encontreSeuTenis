@@ -1,19 +1,19 @@
 import React, {useEffect, useState} from 'react';
-import ListShoes from '../../Components/ListShoes/index';
+import ListAdm from '../../Components/ListAdm/index';
 import styled from 'styled-components';
-import api from '../../Server/api'
+import api from '../../Server/api';
+import {Link} from 'react-router-dom';
 
 const ListContainer = styled.div`
-  display: flex;
-  flex-direction: row;  
-  justify-content: center;
-  background-color: #ccc;
+  display: flex;  
+  background-color: black;
   padding: 10px;
-  flex-wrap: wrap;
+  justify-content: end;
+  flex-direction: column;
 `
 const Container = styled.div`
   max-width: 960px;
-  margin: 30px auto;
+  
   `
 
 const Input = styled.input`
@@ -27,11 +27,21 @@ const Input = styled.input`
   padding: 0 10px;
   font-size:16px;
 `
+const Div = styled.div`
+max-width: 960px;
+display: flex;
+gap: 10px;
+vertical-align: middle;
+`
+
+const Button = styled.button`
+margin-bottom:20px ;
+
+`
 
 
 
-
-function ListaShoes(){
+function cadastrarAdministrar(){
     const [tenis, setTenis] =  useState([]);
     const [search,setSearch] = useState('');
     
@@ -57,17 +67,23 @@ function ListaShoes(){
          <>
           <h1>Lista de Tenis</h1>
       <Container>
-      <Input 
-          type="search"
-          placeholder='Procure pelo seu tenis'
-          value={search}
-          onChange={(ev)=> setSearch(ev.target.value)}
-          />
+        <Div>
+          <Input 
+              type="search"
+              placeholder='Procure pelo seu tenis'
+              value={search}
+              onChange={(ev)=> setSearch(ev.target.value)}
+              />
+            <Link to="/administrar/cadastrar">
+            <Button onClick={''}>Cadastrar</Button>
+            </Link>
+            <Button onClick={''}>Adm</Button>
+        </Div>
         <ListContainer>
         {
           tenis.map(shoes =>{
             return (
-              <ListShoes 
+              <ListAdm
               key={shoes.url}
               tenis={shoes}/>
             )
@@ -79,4 +95,4 @@ function ListaShoes(){
     )
 }
 
-export default ListaShoes;
+export default cadastrarAdministrar;

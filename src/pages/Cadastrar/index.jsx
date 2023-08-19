@@ -28,7 +28,7 @@ const Button = styled.button`
 const Label = styled.label`
     display:flex;
     flex-direction:column;
-    margin-bottom: 15px;
+    margin-top: 15px;
   
 `
 
@@ -41,7 +41,7 @@ function Cadastrar(){
     function onSubmit(ev){
         ev.preventDefault();
         
-        const url = '/tenis'
+        const url = '/tenis';
 
         api.post(url, values)
         .then(() => {
@@ -55,7 +55,7 @@ function Cadastrar(){
 
         console.log({name,value})
 
-        setValues({...value,[name]:value})
+        setValues({...values,[name]:value});
     }
 
     return(
@@ -67,7 +67,7 @@ function Cadastrar(){
                 <Input type="text" id="title" name="title" onChange={onChange} />
                 <Label htmlFor="url">Url do Tenis</Label>
                 <Input type="text" id="url" name="url" onChange={onChange}/>
-                <Label htmlFor="imagem">Url/Imagem</Label>
+                <Label htmlFor="image">Url/Imagem</Label>
                 <Input type="text" id="image" name="image" onChange={onChange} />
                 <Label htmlFor="price">Preço</Label>
                 <Input type="text" id="price" name="price" onChange={onChange} />
