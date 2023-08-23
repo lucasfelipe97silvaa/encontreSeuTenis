@@ -14,8 +14,9 @@ const ConteinerGlobal = styled.div`
 const ItemConteiner = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: space-between ;
   border-radius: 4px;
-  background-color: green;
+  background-color: #fff;
   height: 120px;
   width: 900px;
   color: #29303b;
@@ -62,7 +63,7 @@ const Button = styled.div`
 const Link = styled.a`
   text-decoration: none;
   display: flex;
-  flex-direction: row;  
+  flex-direction: row;
 `
 
 
