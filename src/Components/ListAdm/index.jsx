@@ -1,5 +1,8 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
+import {Link} from 'react-router-dom'
+import api from '../../Server/api'
+
 
 const CapaProduto = styled.img`
   width: auto;
@@ -39,44 +42,88 @@ const Price = styled.div`
   
 `
 
-const Button = styled.div`
+const Button = styled.button`
   display: inline-block;
+  height: 30px;
   margin-bottom: 100px;
   font-weight: 400;
   text-align: center;
-  white-space: nowrap;
+  align-items: center;
   vertical-align: middle;
   cursor: pointer;
   border: 1px solid transparent;
   font-size: 14px;
   padding: 6px 12px;
   color: #fff;
-  background-color: #cf0c0c;
+  background-color: #b90404;
   border-color: black;
   border-radius: 4px;
-  transition: border-color ;
   font-family: inherit;
 `
 
-
-
-const Link = styled.a`
-  text-decoration: none;
-  display: flex;
-  flex-direction: row;
+const ButtonEdit = styled.span`
+  height: 30px;
+  margin-bottom: 100px;
+  font-weight: 400;
+  text-align: center;
+  align-items: center;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid transparent;
+  font-size: 14px;
+  padding: 6px 12px;
+  color: #fff;
+  background-color: #b90404;
+  border-color: black;
+  border-radius: 4px;
+  font-family: inherit;
+  
+`
+const Panel = styled.div`
+  display:flex;
+  align-items: center;
 `
 
 
-
 export default function ListAdm({tenis}) {
+  const [loading, setLoading] = useState(true);
+
+  function onDelete(id){
+    setLoading(false);
+
+    const url = `/tenis/${id}`;
+
+    api.delete(url)
+    .then((response) => {});
+
+  }
+
   return (
+    <>
+    {!loading
+      ?
+      (
+        <div>deletando..</div>
+      )
+      :
+      (
         <ItemConteiner>
-            <Link href={tenis.url} target='_blank'>
+          <Panel>
+            <p>{tenis.id}</p>
             <CapaProduto src={tenis.image}/>
             <Title>{tenis.title}</Title>
             <Price>{tenis.price}</Price>
-            <Button onClick={''}>Comprar</Button>
-            </Link>
+          </Panel>
+
+              <ButtonEdit>
+              <Link to={`/administrar/editar/${tenis.id}`}>
+              Editar
+              </Link>
+              </ButtonEdit>
+            <Button onClick={() => onDelete(tenis.id)}>Excluir</Button>
          </ItemConteiner>
+      )
+    }
+    </>
   )
 }

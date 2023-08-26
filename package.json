@@ -29,5 +29,13 @@
   "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
   "main": "vite.config.js",
   "author": "Lucas",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucasfelipe97silvaa/encontreSeuTenis.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lucasfelipe97silvaa/encontreSeuTenis/issues"
+  },
+  "homepage": "https://github.com/lucasfelipe97silvaa/encontreSeuTenis#readme"
 }

@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 
 const ListContainer = styled.div`
   display: flex;  
-  background-color: black;
+  background-color: #c5c5c5;
   padding: 10px;
   justify-content: end;
   flex-direction: column;
@@ -77,7 +77,6 @@ function cadastrarAdministrar(){
             <Link to="/administrar/cadastrar">
             <Button onClick={''}>Cadastrar</Button>
             </Link>
-            <Button onClick={''}>Adm</Button>
         </Div>
         <ListContainer>
         {
