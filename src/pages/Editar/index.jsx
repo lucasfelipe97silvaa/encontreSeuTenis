@@ -1,13 +1,13 @@
-import React, {useState, useParams} from 'react';
+import React, {useState, useEffect} from 'react';
 import api from '../../Server/api';
-import {useNavigate} from 'react-router-dom';
+import {useNavigate, useParams} from 'react-router-dom';
 import styled from 'styled-components';
 
 const infiniteValue = {
     title:'',
     image: '',
-    price:0,
-    url:''
+    price:0 ,
+    url:'' 
 };
 
 const Input = styled.input`
@@ -33,9 +33,9 @@ const Label = styled.label`
 `
 
 function Editar(){
-    const [values,setValues] = useState(infiniteValue);
+    const [values, setValues] = useState(infiniteValue);
 
-    const navegate = useNavigate();
+    const navigate = useNavigate();
 
     const {id} = useParams();
 
@@ -46,7 +46,7 @@ function Editar(){
             api.get(url)
                 .then((response) =>  {
                     setValues(response.data);
-            })
+                })
         }
     },[])
 
@@ -54,11 +54,9 @@ function Editar(){
     function onSubmit(ev){
         ev.preventDefault();
         
-        const url = '/tenis';
-
         api.put(url, values)
         .then(() => {
-            navegate('/')
+            navigate('/administrar')
         })
 
     }
@@ -84,7 +82,7 @@ function Editar(){
                 <Input type="text" id="image" name="image" value={values.image} onChange={onChange} />
                 <Label htmlFor="price">Preço</Label>
                 <Input type="text" id="price" name="price" value={values.price} onChange={onChange} />
-                <Button type='submit' onClick={''}>Salvar</Button>
+                <Button type='submit'>Salvar</Button>
             </Conteiner>
 
         </Form>

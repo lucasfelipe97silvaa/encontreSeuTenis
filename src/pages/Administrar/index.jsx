@@ -75,7 +75,7 @@ function cadastrarAdministrar(){
               onChange={(ev)=> setSearch(ev.target.value)}
               />
             <Link to="/administrar/cadastrar">
-            <Button onClick={''}>Cadastrar</Button>
+            <Button>Cadastrar</Button>
             </Link>
         </Div>
         <ListContainer>
