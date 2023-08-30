@@ -45,17 +45,16 @@ const Price = styled.div`
 const Button = styled.button`
   display: inline-block;
   height: 30px;
-  margin-bottom: 100px;
   font-weight: 400;
   text-align: center;
   align-items: center;
   vertical-align: middle;
-  cursor: pointer;
+  /* cursor: pointer; */
   border: 1px solid transparent;
   font-size: 14px;
   padding: 6px 12px;
   color: #fff;
-  background-color: #b90404;
+  background-color: #978080;
   border-color: black;
   border-radius: 4px;
   font-family: inherit;
@@ -63,7 +62,6 @@ const Button = styled.button`
 
 const ButtonEdit = styled.span`
   height: 30px;
-  margin-bottom: 100px;
   font-weight: 400;
   text-align: center;
   align-items: center;
@@ -82,8 +80,16 @@ const ButtonEdit = styled.span`
 const Panel = styled.div`
   display:flex;
   align-items: center;
+  width: 600px;
+  justify-content: space-around;
 `
-
+const ButtonConteiner = styled.div`
+  width: 200px;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+`
 
 export default function ListAdm({tenis}) {
   const [loading, setLoading] = useState(true);
@@ -114,13 +120,12 @@ export default function ListAdm({tenis}) {
             <Title>{tenis.title}</Title>
             <Price>{tenis.price}</Price>
           </Panel>
-
-              <ButtonEdit>
+          <ButtonConteiner>
               <Link to={`/administrar/editar/${tenis.id}`}>
-              Editar
+                <ButtonEdit>Editar</ButtonEdit>
               </Link>
-              </ButtonEdit>
-            <Button onClick={() => onDelete(tenis.id)}>Excluir</Button>
+              <Button onClick={() => onDelete(tenis.id)}>Excluir</Button>
+            </ButtonConteiner>
          </ItemConteiner>
       )
     }
