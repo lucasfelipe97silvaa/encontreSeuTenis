@@ -65,7 +65,7 @@ function cadastrarAdministrar(){
 
     return(
          <>
-          <h1>Lista de Tenis</h1>
+          <Link to={'/'}><h1>Lista de Tenis</h1></Link>
       <Container>
         <Div>
           <Input 
