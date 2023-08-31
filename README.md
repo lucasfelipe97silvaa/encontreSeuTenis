@@ -19,3 +19,7 @@
 <p>#executar o projeto</p> 
 https://busca-de-tenis.netlify.app/
 
+```npm
+npm install
+npm run dev
+``` 
