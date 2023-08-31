@@ -19,12 +19,13 @@
 <p>#executar o projeto</p> 
 https://busca-de-tenis.netlify.app/
 
-
 ```bash
-git clone 
+# clonar repositorio  
+git clone https://github.com/lucasfelipe97silvaa/encontreSeuTenis.git
 ``` 
 
 ```npm
+# executar o comando no prompt dentro da pasta do projeto  
 npm install
 npm run dev
 ``` 
