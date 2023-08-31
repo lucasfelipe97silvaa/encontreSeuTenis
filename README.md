@@ -16,6 +16,6 @@
 
 ## Como executar o projeto
 
-<p>#executar o projeto</p> </br>
+<p>#executar o projeto</p> 
 https://busca-de-tenis.netlify.app/
 
