@@ -15,5 +15,5 @@
  - json-server
 
 ## Comando para rodar a aplicação ##
-<h2>npm install </br> npm run dev </br>
-</h2>
+<p>npm install </br> npm run dev </br>
+</p>
