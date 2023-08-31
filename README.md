@@ -14,6 +14,8 @@
 ### Dependencias
  - json-server
 
-## Comando para rodar a aplicação ##
-$npm install </br> npm run dev </br>
+## Como executar o projeto
+
+###executar o projeto
+https://busca-de-tenis.netlify.app/
 
