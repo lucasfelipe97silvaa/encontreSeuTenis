@@ -56,6 +56,7 @@ const Button = styled.div`
   color: #fff;
   font-weight: 600;
   border: 1px solid #4b0b00;
+  box-shadow: 1px 1px #000;
 `
 
 
@@ -83,13 +84,13 @@ export default function ListShoes({tenis}) {
       <ItemConteiner>
           <CapaProduto src={tenis.image}/>
           <Link href={tenis.url} target='_blank'>
-          <Conteiner>
-            <Title>{tenis.title}</Title>
-            <Price>${tenis.price}</Price>
-          <ConteinerButton>
-            <Button onClick={''}>Comprar</Button>
-          </ConteinerButton>
-        </Conteiner>
+            <Conteiner>
+              <Title>{tenis.title}</Title>
+              <Price>${tenis.price}</Price>
+                <ConteinerButton>
+                  <Button onClick={''}>Comprar</Button>
+                </ConteinerButton>
+            </Conteiner>
           </Link>
       </ItemConteiner>
     </>
